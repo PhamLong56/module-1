@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Sở Thích Của Bạn</title>
+    <style>
+        body {
+            background-color: #E0FFFF;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: white;
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .form-container h2 {
+            background-color: #FF4500;
+            color: white;
+            padding: 10px 0;
+            margin: -20px -20px 20px -20px;
+        }
+        .form-container input[type="text"], .form-container input[type="email"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .form-container input[type="checkbox"] {
+            margin: 0 5px 0 0;
+        }
+        .form-container label {
+            display:inline;
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="form-container">
+    <h2>SỞ THÍCH CỦA BẠN</h2>
+    <form action="submit_form.php" method="get">
+        <input type="text" name="fullname" placeholder="Họ và tên"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+            <div style="color: #FF4500" >
+                <table>
+                    <tr>
+                        <td><label><input type="checkbox" name="hobbies" value="Thể thao"> Thể thao</label></td>
+                        <td><label><input type="checkbox" name="hobbies" value="Âm nhạc"> Âm nhạc</label></td>
+                        <td><label><input type="checkbox" name="hobbies" value="Đọc sách"> Đọc sách</label></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="hobbies" value="Chơi game"> Chơi game</label></td>
+                        <td><label><input type="checkbox" name="hobbies" value="Du lịch"> Du lịch</label></td>
+                        <td><label><input type="checkbox" name="hobbies" value="Điện ảnh"> Điện ảnh</label></td>
+                    </tr>
+
+                </table>
+        </div>
+
+
+        <button type="submit">Gửi thông tin</button>
+        <button type="reset">Nhập lại</button>
+    </form>
+</div>
 </body>
 </html>
