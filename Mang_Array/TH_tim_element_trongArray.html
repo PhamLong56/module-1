@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let x = +prompt("Nhap mot so: ");
+    // let arrNumber = [10, 2, 3, 1, 5, -3];
+    // for (let i = 0; i < arrNumber.length; i++) {
+    //     if (x == arrNumber[i]) {
+    //         alert( x + 'la so trong mang tai vi tri' + i);
+    //     }
+    // }
+    let x = +prompt("Nhap mot so: ");
+    let arrNumber = [10, 2, 3, 1, 5, -3];
+    let index = -1;
+    for (let i = 0; i < arrNumber.length; i++) {
+        if (x == arrNumber[i]) {
+            alert( x + 'la so trong mang tai vi tri' + i);
+            index = i
+        }
+    }
+    if (index>-1){
+        alert( x + ' la so trong mang tai vi tri' + i);
+    }
+    else {
+        alert( x + ' la so khong co trong mang ' );
+    }
+
+
+</script>
+</body>
+</html>

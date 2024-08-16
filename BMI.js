@@ -16,5 +16,5 @@ function ket_qua(){
     } else {
         chiSo = "Obese";
     }
-        message.innerHTML= "Tình trạng của bạn là: " + chiSo +" Với chỉ số BMI: " + bmi
+        message.innerHTML= "Tình trạng của bạn là: " + chiSo +" Với chỉ số BMI: " + bmi.toFixed()
 }

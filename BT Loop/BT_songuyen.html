@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let n = parseInt(prompt(" Nhap so bat ki"));
+    // let check = true;
+    // if (n === 2) {
+    //     check = true;
+    // } else {
+    //     for (let i = 2; i < n; i++) {
+    //         if (n % 2 === 0) {
+    //             check = false;
+    //             break;
+    //         }
+    //     }
+    // }
+    // if (check) {
+    //     alert(n + " la so nguyen to");
+    //
+    // } else {
+    //     alert(n + " khong la so nguyen to")
+    // }
+
+
+ // bt in ra soos nguyen to
+    let count = 0
+    let j = 2
+    while (count < 20) {
+        let check = true
+        if (j === 2) {
+            check = true
+        } else {
+            for (let i = 2; i < j; i++) {
+                if (j % i === 0) {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check) {
+            count++;
+            document.write(j + '<br/>')
+        }
+        j++;
+    }
+</script>
+</body>
+</html>
