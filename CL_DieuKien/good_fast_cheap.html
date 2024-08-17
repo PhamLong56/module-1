@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good-Fast-Cheap</title>
+</head>
+<body>
+<h1> Game GOOD-FAST-CHEAP</h1>
+<p> CHỌN 2 TRONG 3 THUỘC TÍNH SAU</p>
+<form>
+    <input type="checkbox" id="good" name="good">
+    <label for="good">GOOD</label><br><br>
+
+    <input type="checkbox" id="fast" name="fast">
+    <label for="fast">FAST</label><br><br>
+
+    <input type="checkbox" id="cheap" name="fast">
+    <label for="cheap">CHEAP</label><br><br>
+
+    <button type="button" onclick="playGame()">Xem Ket Qua</button>
+</form>
+<p id="result"></p>
+<script>
+    function gameGoFaChe(isGood, isFast, isCheap) {
+        if (isGood && isFast && isCheap) {
+            return "làm gì có chuyện vừa tốt vừa nhanh vừa rẻ như thế này"
+        } else if (isGood && isFast) {
+            return "đã tốt mà còn nhanh nhưng mắc lắm."
+        } else if (isGood && isCheap) {
+            return "đã tốt mà rẻ thì không nhanh đươc nhé."
+        } else if (isFast && isCheap) {
+            return "vùa nhanh mà còn rẻ thì xài chắc gì bền"
+        } else {
+            return " chọn 2 đáp án đi bạn êiiii"
+        }
+    }
+
+    function playGame() {
+        let isGood = document.getElementById("good").checked;
+        let isFast = document.getElementById("fast").checked;
+        let isCheap = document.getElementById("cheap").checked;
+        let result = gameGoFaChe(isGood, isFast, isCheap);
+        document.getElementById("result").innerHTML = result
+    }
+</script>
+</body>
+</html>
