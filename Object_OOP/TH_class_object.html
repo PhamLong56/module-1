@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    *  function Student(id, name, address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.getInfor = function () {
+            return "Id=" + this.id + "Name=" + this.name + "Address=" + this.address
+        }
+    }
+
+    let student = new Student(1, " Nguyen Van A ", " ha Noi")
+    console.log(student.getInfor())
+    document.write(student.getInfor())
+    * */
+
+//     let student={
+//         id:1,
+//         name: "Nguyen Van A",
+//         address: "Ha Noi",
+//         getInfor: function (){
+//             return "Id:" + this.id + "Name:" + this.name + "Address:" + this.address;
+//         }
+//     }
+// console.log(student.name);
+// console.log(student.getInfor())
+
+    function Mobile(name) {
+        this.name = name;
+        this.batteryLevel = 100; // Trạng thái pin, tối đa 100
+        this.isOn = false; // Trạng thái điện thoại (bật/tắt)
+        this.draftingMessage = ""; // Vùng nhớ lưu tin nhắn đang soạn thảo
+        this.inbox = []; // Vùng nhớ lưu tin nhắn trong hộp thư đến
+        this.sentMessages = []; // Vùng nhớ lưu tin nhắn đã gửi
+
+        // Kiểm tra trạng thái điện thoại
+        this.checkStatus = function() {
+            return this.isOn;
+        };
+
+        // Bật điện thoại
+        this.turnOn = function() {
+            if (!this.isOn) {
+                this.isOn = true;
+                console.log(`${this.name} is now ON.`);
+            }
+        };
+
+        // Tắt điện thoại
+        this.turnOff = function() {
+            if (this.isOn) {
+                this.isOn = false;
+                console.log(`${this.name} is now OFF.`);
+            }
+        };
+
+        // Xạc pin
+        this.chargeBattery = function() {
+            this.batteryLevel = 100;
+            console.log(`${this.name} is fully charged.`);
+        };
+
+        // Soạn tin nhắn
+        this.draftMessage = function(content) {
+            if (this.isOn) {
+                this.draftingMessage = content;
+                this.batteryLevel--;
+                console.log(`${this.name} is drafting a message: "${content}"`);
+            } else {
+                console.log(`${this.name} is OFF. Cannot draft message.`);
+            }
+        };
+
+        // Nhận tin nhắn từ một điện thoại khác
+        this.receiveMessage = function(message) {
+            if (this.isOn) {
+                this.inbox.push(message);
+                this.batteryLevel--;
+                console.log(`${this.name} received a message: "${message}"`);
+            } else {
+                console.log(`${this.name} is OFF. Cannot receive messages.`);
+            }
+        };
+
+        // Gửi tin nhắn tới một điện thoại khác
+        this.sendMessage = function(toMobile) {
+            if (this.isOn && this.draftingMessage !== "") {
+                toMobile.receiveMessage(this.draftingMessage);
+                this.sentMessages.push(this.draftingMessage);
+                this.draftingMessage = ""; // Xóa tin nhắn đang soạn thảo sau khi gửi
+                this.batteryLevel--;
+                console.log(`${this.name} sent a message.`);
+            } else if (!this.isOn) {
+                console.log(`${this.name} is OFF. Cannot send messages.`);
+            } else {
+                console.log(`No message drafted to send from ${this.name}.`);
+            }
+        };
+
+        // Xem tin nhắn trong hộp thư đến
+        this.viewInbox = function() {
+            if (this.isOn) {
+                console.log(`${this.name}'s Inbox:`);
+                this.inbox.forEach((message, index) => {
+                    console.log(`${index + 1}: ${message}`);
+                });
+                this.batteryLevel--;
+            } else {
+                console.log(`${this.name} is OFF. Cannot view inbox.`);
+            }
+        };
+
+        // Xem tin nhắn đã gửi
+        this.viewSentMessages = function() {
+            if (this.isOn) {
+                console.log(`${this.name}'s Sent Messages:`);
+                this.sentMessages.forEach((message, index) => {
+                    console.log(`${index + 1}: ${message}`);
+                });
+                this.batteryLevel--;
+            } else {
+                console.log(`${this.name} is OFF. Cannot view sent messages.`);
+            }
+        };
+    }
+
+    // Khởi tạo các đối tượng điện thoại
+    let nokia = new Mobile("Nokia");
+    let iphone = new Mobile("iPhone");
+
+    // Thực hiện kịch bản
+    nokia.turnOn(); // Bật điện thoại Nokia
+    nokia.draftMessage("Hello, iPhone!"); // Soạn tin nhắn
+    nokia.sendMessage(iphone); // Gửi tin nhắn tới iPhone
+
+    iphone.turnOn(); // Bật điện thoại iPhone
+    iphone.viewInbox(); // Kiểm tra hộp thư đến
+
+</script>
+</body>
+</html>

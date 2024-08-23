@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 500px;
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid #737373;
+            padding: 5px;
+        }
+
+        thead {
+            background-color: #2f2fb6;
+            color: white;
+        }
+
+        .btn-delete {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="name-product">
+<input type="text" id="id-product" hidden>
+<button onclick="addProduct()">Add</button>
+<button onclick="editProduct()">Edit</button>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="list-product"></tbody>
+</table>
+<script src="my.js"></script>
+</body>
+</html>

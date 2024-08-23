@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cờ Caro 10x10</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(5, 40px);
+            grid-template-rows: repeat(5, 40px);
+            margin: 20px auto;
+        }
+        .cell {
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        #status {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Trò Chơi Cờ Caro 10x10</h1>
+<div id="status">Người chơi X đến lượt!</div>
+<div id="game-board"></div>
+<button id="reset-btn">Reset</button>
+<script>
+    const boardSize = 5;
+    let board = [];
+    let currentPlayer = 'X';
+    let gameOver = false;
+
+    // Khởi tạo bảng game
+    function initializeBoard() {
+        const gameBoard = document.getElementById("game-board");
+        for (let i = 0; i < boardSize; i++) {
+            board[i] = [];
+            for (let j = 0; j < boardSize; j++) {
+                board[i][j] = '';
+                const cell = document.createElement("div");
+                cell.classList.add("cell");
+                cell.setAttribute("data-row", i);
+                cell.setAttribute("data-col", j);
+                cell.addEventListener("click", onCellClick);
+                gameBoard.appendChild(cell);
+            }
+        }
+    }
+
+    // Xử lý khi nhấp vào ô
+    function onCellClick(event) {
+        if (gameOver) return;
+
+        const row = event.target.getAttribute("data-row");
+        const col = event.target.getAttribute("data-col");
+
+        if (board[row][col] === '') {
+            board[row][col] = currentPlayer;
+            event.target.textContent = currentPlayer;
+
+            if (checkWin(row, col, currentPlayer)) {
+                document.getElementById("status").textContent = "Người chơi " + currentPlayer + " thắng!";
+                gameOver = true;
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                document.getElementById("status").textContent = "Người chơi " + currentPlayer + " đến lượt!";
+            }
+        }
+    }
+
+    // Kiểm tra chiến thắng
+    function checkWin(row, col, player) {
+        row = parseInt(row);
+        col = parseInt(col);
+
+        // Kiểm tra theo các hướng
+        return checkDirection(row, col, 1, 0, player) ||  // Ngang
+            checkDirection(row, col, 0, 1, player) ||  // Dọc
+            checkDirection(row, col, 1, 1, player) ||  // Chéo phải
+            checkDirection(row, col, 1, -1, player);   // Chéo trái
+    }
+
+    // Kiểm tra một hướng
+    function checkDirection(row, col, rowDir, colDir, player) {
+        let count = 1;
+
+        // Đếm số ô theo một hướng (trái/phải, trên/dưới)
+        count += countInDirection(row, col, rowDir, colDir, player);
+        count += countInDirection(row, col, -rowDir, -colDir, player);
+
+        return count >= 3;
+    }
+
+    // Đếm số ô theo một hướng cụ thể
+    function countInDirection(row, col, rowDir, colDir, player) {
+        let count = 0;
+        let newRow = row + rowDir;
+        let newCol = col + colDir;
+
+        while (newRow >= 0 && newRow < boardSize && newCol >= 0 && newCol < boardSize && board[newRow][newCol] === player) {
+            count++;
+            newRow += rowDir;
+            newCol += colDir;
+        }
+
+        return count;
+    }
+    function resetGame() {
+        // Xóa nội dung bảng game
+        const gameBoard = document.getElementById("game-board");
+        gameBoard.innerHTML = ""; // Xóa hết các ô cũ
+
+        // Đặt lại các biến toàn cục
+        board = [];
+        currentPlayer = 'X';
+        gameOver = false;
+
+        // Khởi tạo lại bảng game
+        initializeBoard();
+    }
+    document.getElementById("reset-btn").addEventListener("click", resetGame);
+    // Khởi tạo game
+    initializeBoard();
+</script>
+
+</body>
+</html>

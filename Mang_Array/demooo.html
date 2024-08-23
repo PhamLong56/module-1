@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let arrs=["code"]
+    // arrs.push("gym");
+    // console.log(arrs)
+    //
+    // let students =[]
+    // let student={
+    //     id: 1,
+    //     name: "Nguyen Van A",
+    //     address: "Ha Noi",
+    // }
+    // students.push(student);
+    // console.log(students)
+    //
+    // let arrs = ["code", "gym", "vn"];
+    // console.log(arrs);
+    // arrs.splice(1, 1)
+    // console.log(arrs)
+    //
+    // let students = [
+    //     {
+    //         id: 1,
+    //         name: 'Nguyen Van A',
+    //         address: "ha Noi",
+    //     },
+    //     {
+    //         id: 2,
+    //         name: 'Nguyen Van B',
+    //         address: "Da Nang",
+    //     }]
+    // console.log(students);
+    // for (let i = 0; i < students.length; i++) {
+    //     if (students[i].id == 2) {
+    //         students.splice(1, 1)
+    //     }
+    // }
+    // console.log(students)
+
+
+
+
+    // let a= ['code'];
+    // let b=['gym'];
+    // let c= a.concat(b);
+    // console.log(c)
+    //
+    // let arrs= [
+    //     {
+    //         id:1,
+    //         name: "Nguyen Van A"
+    //     },
+    //     {
+    //         id:2,
+    //         name:"Nguyen Van B"
+    //     }
+    //     ]
+    // let arr2=[
+    //     {
+    //         id:3,
+    //         name:"Nguyen Van C"
+    //     },
+    //     {
+    //         id:4,
+    //         name:"Nguyen Van D"
+    //     }
+    // ]
+    // let newArrs= arrs.concat(arr2)
+    // console.log(newArrs)
+
+// indexof()
+   //  let b= "codegym.vn";
+   //  let index = b.indexOf('g');
+   //  console.log(index)
+   //
+   //
+   // let  number=[1,2,5,8,4,]
+   //  let a =number.indexOf(5)
+   //  console.log(5)
+
+//map()
+    const animals=[
+        {
+            id: 1,
+            name:"cat",
+            size:"small"
+        },
+        {
+            id:2,
+            name: "dog",
+            size: "small"
+        }
+    ]
+    let newAnimal = animals.map(function (animal){
+        if(animal.id == 1){
+            animal.name="python"
+        }
+        return animal
+    })
+console.log(newAnimal)
+
+</script>
+
+</body>
+</html>

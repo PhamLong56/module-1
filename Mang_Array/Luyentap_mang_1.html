@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.
+    // Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+    //     let input = window.prompt("Nhập các số nguyên, ngăn cách bằng dấy phẩy:");
+    //     let arr = input.split(',').map(Number);
+    //     let count = 0;
+    //     for (let i = 0; i < arr.length; i++) {
+    //         if(arr[i]>=10){
+    //             count++;
+    //         }
+    //     }
+    //     document.write(" day so sau:" + arr.join(", ") + " co so phan tu lon hon 10 la: " +count)
+    //day so sau:11, 32, 1, 7, 234, 112, 98, 33 co so phan tu lon hon 10 la: 6
+
+
+    // Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+
+    /*let input = window.prompt("Nhập các số nguyên, ngăn cách bằng dấy phẩy:");
+    let arr = input.split(',').map(Number);
+    let max = arr[0];
+    let index = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = numbers[i];
+            index = i;
+        }
+    }
+    document.write(max + " la max tai vi tri " + index)
+*/
+
+    // Bài 3- Viết chương trình khởi tạo mảng số nguyên.
+    //     Hiển hiện giá trị lớn nhất trong mảng đó.
+    //     In ra giá trị trung bình của các phần tử trong mảng.
+    /*    let input = window.prompt("Nhap cac so ngan cach nhau bang dau phay:")
+        let arr = input.split(',').map(Number);
+        let max = arr[0]
+        let sum = 0
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]>max){
+                max=arr[i]
+            }
+            sum+= arr[i];
+        }
+        let avg= sum/arr.length;
+        document.write("day so da nhap la: "+ arr.join(", ") + " co max la: "+ max + " va trung binh cong la: "+ avg) */
+    // 11,-32,-1,7,-234,112,98,-33
+
+    // Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    // let input = window.prompt("Nhap cac so ngan cach nhau bang dau phay:")
+    //     let arr = input.split(',').map(Number);
+    //     let revArr = arr.reverse();
+    //     document.write("day so: " + input + " nguoc lai la: " + revArr)
+
+
+    // //Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi
+    // let input = window.prompt("Nhap cac so ngan cach nhau bang dau phay:")
+    // let arr = input.split(',').map(Number);
+    // count = 0
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] < 0) {
+    //         count++
+    //     }
+    // }
+    // document.write(" day so sau:" + arr.join(", ") + " co " + count + " so am")
+
+    /*   Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+           Chương trình tìm xem V có nằm trong mảng số nguyên không?
+           Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+     */
+    // let input = window.prompt("Nhap cac so ngan cach nhau bang dau phay:");
+    // let arr = input.split(',').map(Number);
+    // // let arr = [5, 12, 7, 22, 9, 14, 6, 11, 30, 3];
+    // let V = parseInt(window.prompt("Nhap V can tim trong mang:"))
+    // let found = false;
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === V) {
+    //         found = true;
+    //         break;
+    //     }
+    // }
+    // if (found) {
+    //     document.write(V + " is in the array")
+    // } else {
+    //     document.write(V + " is not in the array")
+    // }
+
+
+    /* Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+     nhập/tạo phần tử số nguyên V.
+     Chương trình kiểm tra xem V có thuộc mảng đã cho không,
+     nếu V thuộc mảng đã cho xoá V khỏi mảng
+     (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V,
+     và gán 0 cho phần tử cuối cùng của mảng)
+     */
+    // let input = window.prompt("Nhap day so bat ky:");
+    // let arr = input.split(", ").map(Number);
+    // let V = parseInt(window.prompt("Nhap gia tri V:"));
+    // let found = false;
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] === V) {
+    //         found = true;
+    //         for (let j = i; j < arr.length - 1; j++) {
+    //             arr[j] = arr[j + 1]
+    //         }
+    //         arr[arr.length - 1] = 0
+    //         // break;
+    //     }
+    // }
+    // if (found) {
+    //     document.write(V + "da bi xoa khoi mang,ta co mang moi la: " + arr)
+    // } else {
+    //     document.write(V + "khong thuoc mang")
+    // }
+
+    /* Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+         Chương trình sắp xếp mảng theo thứ tự giảm dần
+     và hiển thị ra mảng đã được sắp xếp. */
+
+    //     let input = window.prompt("Nhap day so bat ky:"); //vd: 5, 12, 7, 22, 9, 14, 6, 11, 30, 3
+    //     let arr = input.split(", ").map(Number);
+    //     arr.sort(function (a,b){   // sử dụng hàm funtion để so sánh 2 số , tránh sắp xếp theo thứ tự alphabet
+    //         return a-b;
+    //     })
+    //     // arr.sort() // sẽ trả kết quả là 11,12,14,22,3,30,5,6,7,9
+    // document.write(input + " sau khi sap xep thanh "+ arr)
+
+    /*  Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử,
+          gọi là mảng a và b.
+          Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+          Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c.
+          Hiển thị mảng c.
+     */
+    let a = window.prompt("Nhap day so bat ky thu 1:");
+    let b = window.prompt("Nhap day so bat ky thu 2:");
+    let c = a.concat(b);
+    document.write( c )
+
+</script>
+</body>
+</html>

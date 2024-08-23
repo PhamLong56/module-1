@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DO YOU LOVE ME</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        margin: 10px;
+        text-align: center;
+    }
+
+    #ansNo {
+        position: absolute;
+    }
+</style>
+<body>
+<h1> Do you love me???</h1>
+<button id="ansYes" onclick="yesClicked()">Yes</button>
+<button id="ansNo" onmouseover="moveNoButton()">No</button>
+<script>
+    function yesClicked() {
+        alert("💖")
+    }
+
+    function moveNoButton() {
+        let button = document.getElementById("ansNo");
+        let randomX = Math.floor(Math.random() * window.innerWidth);
+        let randomY = Math.floor(Math.random() * window.innerHeight);
+
+        if (randomX > window.innerWidth - 100) randomX = window.innerWidth - 100;
+        if (randomY > window.innerHeight - 50) randomY = window.innerHeight - 50;
+
+        button.style.left = randomX + 'px';
+        button.style.top = randomY + 'px';
+    }
+</script>
+
+</body>
+</html>
