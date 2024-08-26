@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #board{
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #f0f0f0;
+            border: 1px solid chocolate;
+        }
+        .cell{
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #controls{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<button id="board10x10">10x10</button>
+<button id="board20x20">20x20</button>
+<script src="main_caro.js"></script>
+</body>
+</html>
