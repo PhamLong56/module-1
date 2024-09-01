@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        #puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+        .puzzle-piece {
+            width: 50px;
+            height: 50px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            border-radius: 5px;
+            background-size: 50px 50px;
+            transition: background 0.3s;
+        }
+        #win-message {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .win {
+            font-size: 24px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div id="puzzle-container"></div>
+<div id="win-message">
+    <p class="win">Congratulations! You've completed the puzzle!</p>
+</div>
+
+<script>
+    const puzzleContainer = document.getElementById('puzzle-container');
+    const winMessage = document.getElementById('win-message');
+
+    // Đường dẫn đến các mảnh ảnh
+    const puzzleImages = [
+        'url("https://img.icons8.com/?size=96&id=TyCKx8nVDY0n&format=png")', 'url("https://img.icons8.com/?size=100&id=FhWgscPqt3WL&format=png")', 'url("https://img.icons8.com/?size=96&id=Eq6OZZJMLmys&format=png")',
+        'url("https://img.icons8.com/?size=96&id=YDBpl2BmBneT&format=png")', 'url("https://img.icons8.com/?size=96&id=FyIZyNqWdBWi&format=png")', 'url("https://img.icons8.com/?size=96&id=IGodUQ6dJDZr&format=png")',
+        'url("https://img.icons8.com/?size=96&id=Kmys8eVrwnVU&format=png")', 'url("https://img.icons8.com/?size=128&id=119246&format=png")', 'url("https://img.icons8.com/?size=96&id=SxiHIFtjaX1j&format=png")'
+    ];
+
+    // Thứ tự ngẫu nhiên của các mảnh ảnh
+    let currentOrder = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
+    // Tạo các ô trong grid
+    function createPuzzle() {
+        puzzleContainer.innerHTML = '';
+        currentOrder.forEach((imageIndex, i) => {
+            const piece = document.createElement('div');
+            piece.classList.add('puzzle-piece');
+            piece.style.backgroundImage = puzzleImages[imageIndex];
+            piece.addEventListener('click', () => swapPiece(i));
+            puzzleContainer.appendChild(piece);
+        });
+    }
+
+    // Hoán đổi ảnh khi click vào
+    function swapPiece(index) {
+        const nextIndex = (currentOrder[index] + 1) % puzzleImages.length;
+        currentOrder[index] = nextIndex;
+        createPuzzle();
+        checkWin();
+    }
+
+    // Kiểm tra xem người chơi đã thắng chưa
+    function checkWin() {
+        const isCorrect = currentOrder.every((value, index) => value === index);
+        if (isCorrect) {
+            winMessage.style.display = 'block';
+        } else {
+            winMessage.style.display = 'none';
+        }
+    }
+
+    // Khởi tạo trò chơi
+    createPuzzle();
+</script>
+
+</body>
+</html>

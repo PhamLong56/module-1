@@ -83,8 +83,7 @@ let ctx = document.getElementById("myCanvas").getContext("2d");
             createMultipleCircle()
         }
     }
-   drawMultipleCircles(Math.random()*100)
+   drawMultipleCircles(Math.random()*10)
     console.log(circle)
-
 
 
