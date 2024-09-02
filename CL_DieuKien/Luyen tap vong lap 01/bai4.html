@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fibonacciNumer5() {
+        let n1 = 0;
+        let n2 = 0;
+        let fibo = 0;
+        while (true) {
+            fibo = n1 + n2;
+            if (fibo % 5 === 0) {
+                return fibo;
+            }
+            n1 = n2
+            n2 = fibo
+        }
+    }
+
+    console.log(fibonacciNumer5())
+</script>
+</body>
+</html>
