@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí sách</title>
+</head>
+<style>
+    body{
+        align-items: center;
+        text-align: center;
+    }
+    table {
+        width: 500px;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td, th {
+        border: 1px solid #5f6062;
+        padding: 5px;
+    }
+
+    thead {
+        background-color: #007bff;
+        color: #f0f0f0;
+    }
+    </style>
+<body>
+<h1>Quản lí sách</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Mã số sách</th>
+            <th>Tên Sách</th>
+            <th>Năm xuất bản</th>
+            <th>Số quyển</th>
+            <th>Tình trạng</th>
+        </tr>
+    </thead>
+
+</table>
+<br>
+<br>
+<tbody id="listBook"></tbody>
+<button onclick="theSachDaCo()">Thêm sách đã có</button>
+<button onclick="themSachMoi()">Thêm sách mới</button>
+<button onclick="muonSach()">Mượn Sách</button>
+<button onclick="displaySach()">Hiển thị sách nhiều nhất</button>
+<script src="main.js"></script>
+</body>
+</html>
